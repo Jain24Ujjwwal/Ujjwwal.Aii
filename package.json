@@ -1,0 +1,28 @@
+{
+  "name": "ujjwwal-ai-workspace",
+  "version": "1.0.0",
+  "description": "Ujjwwal AI - Personal AI Workspace Full-Stack Web Application",
+  "private": true,
+  "scripts": {
+    "install:all": "npm --prefix client install --include=dev && npm --prefix server install --include=dev",
+    "build": "npm --prefix client install --include=dev && npm --prefix client run build && npm --prefix server install --include=dev && npm --prefix server run build",
+    "start": "node server/dist/index.js",
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"blue,green\" \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "lint": "npm run lint --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "personal-ai",
+    "ai-workspace",
+    "ujjwwal-ai"
+  ],
+  "author": "Ujjwal",
+  "license": "MIT"
+}
